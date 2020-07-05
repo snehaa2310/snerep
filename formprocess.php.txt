@@ -1,0 +1,21 @@
+
+<?php
+echo "<h2> YOU HAVE REGISTERED SUCCESSFULLY!!</h2>H2>";
+$name = $_POST["user"];
+$pass = $_POST["pass"];
+$Qualificaiton = $_POST["qualification"];
+$Gender = $_POST["gender"];
+$Address = $_POST["address"];
+$DOB = $_POST["date"];
+$Image = $_POST["image"];
+echo("Name:  &nbsp   " .     $name);
+echo("<br/>Password:   &nbsp  " . $pass);
+echo("<br/>Qualification:   &nbsp  " . $Qualificaiton);
+echo("<br/>Gender:   &nbsp  " . $Gender);
+echo("<br/>Address:    &nbsp " . $Address);
+echo("<br/>DOB:   &nbsp  " . $DOB);
+echo("<br/>Image:      &nbsp " .$Image);
+
+
+
+?>
