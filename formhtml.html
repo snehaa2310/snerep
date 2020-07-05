@@ -1,0 +1,44 @@
+<html>
+<head>
+    <style>
+        p {
+            width:500px;
+            margin: auto;
+            border: 2px solid #000000;
+        }
+    <title>FORM</title>
+</head>
+</style>
+<body>
+<form action="p.php" method="post">
+    <p><caption><B><U>EMPLOYEE FORM</U></B></caption></p>
+
+
+    <pre><p>
+
+    <b>NAME:</b>               <input type="text" name="user" placeholder="username"  required/><br>
+    <b>PASSWORD:</b>           <input type="password" name="pass" id="pass" placeholder="password" value="FakePSW" required/><br>
+                               <input type="checkbox" onclick="myFunction()">Show Password
+    <b>QUALIFICATION:</b>      <textarea name="qualification" rows="5" cols="20" required/></textarea><br>
+    <b>GENDER:</b>             <input type="radio" name="gender" id="gender" value="m"/>male <input type="radio" name="gender" id="gender" value="f"/>female<br>
+    <b>ADDRESS:</b>            <textarea name="address" rows="5" cols="20" required/></textarea><br>
+    <b>DOB:</b>                <input type="date" name="date" id="date" required/><br>
+    <b>PROFILE IMAGE:</b>      <input type="file" name="image" id="image" required/>
+
+
+    <button type="submit" value="submit">Submit</button>        <button type="reset" value="reset">Reset</button>
+    </pre>
+</form>
+<script>
+    function myFunction() {
+        var x = document.getElementById("pass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+</body>
+        </p>
+</html>
