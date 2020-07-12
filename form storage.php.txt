@@ -1,0 +1,35 @@
+<?php
+echo "<h2> YOU HAVE REGISTERED SUCCESSFULLY!!</h2>>";
+$name = $_POST["user"];
+$pass = $_POST["pass"];
+$qualificaiton = $_POST["qualification"];
+$gender = $_POST["gender"];
+$address = $_POST["address"];
+$dob = $_POST["dob"];
+
+echo("Name:  &nbsp   " .     $name);
+echo("<br/>Password:   &nbsp  " . $pass);
+echo("<br/>Qualification:   &nbsp  " . $qualificaiton);
+echo("<br/>Gender:   &nbsp  " . $gender);
+echo("<br/>Address:    &nbsp " . $address);
+echo("<br/>DOB:   &nbsp  " . $dob);
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$conn = new mysqli('localhost','root','sne2310?','usersdb');
+if($conn->connect_error)
+{
+    die('Connection Failed : '.$conn->connect_error);
+}
+else
+{
+    $stmt1 = $conn->prepare("insert into employee(name,pass,qualification,gender,address,dob)
+                    values(?,?,?,?,?,?)");
+    $stmt1->bind_param("ssssss",$name,$pass,$qualificaiton,$gender,$address,$dob);
+    $stmt1->execute();
+     echo "Registered Successfully....";
+    $stmt1->close();
+    $conn->close();
+}
+
+
+?>
